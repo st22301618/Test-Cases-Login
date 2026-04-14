@@ -3,6 +3,12 @@
 const loginForm = document.getElementById('loginForm');
 const errorMessage = document.getElementById('errorMessage');
 
+// Mock Database
+const VALID_USER = {
+    email: "test@mail.com",
+    password: "pass12345"
+};
+
 // Validation Logic
 loginForm.addEventListener('submit', (e) => {
     // Prevent the page from refreshing automatically
@@ -14,9 +20,26 @@ loginForm.addEventListener('submit', (e) => {
     // Clear previous error message
     errorMessage.textContent = "";
 
-    // Check Empty Fields
+    // CASE: Check Empty Fields
     if (!email || !password) {
         errorMessage.textContent = "All fields are required.";
         return;
     }
+
+    // CASE: Valid Login
+    if (email === VALID_USER.email && password === VALID_USER.password) {
+        alert("Success! Redirecting...");
+        window.location.href = "dashboard.html";
+    }
+
+    // CASE: Invalid Login / SQL Injection
+    else {
+        showError("Invalid email or password.");
+    }
 });
+
+// Show Error func
+function showError(message) {
+    errorMessage.textContent = message;
+    errorMessage.style.color = "#dc2626";
+}
