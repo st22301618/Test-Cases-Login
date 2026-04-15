@@ -1,1 +1,19 @@
-# Test-Cases-Login
+# Test Cases - Login Page for SWEN302
+
+## Test Cases
+- [x] TC_01 Valid Login
+- [x] TC_02 Invalid Login
+- [x] TC_03 Empty Fields
+- [x] TC_04 SQL Injection
+
+## Boundary Value Testing - Password Length
+- [x] TC_BV_01 Below minimum boundary
+- [x] TC_BV_02 Minimum boundary
+- [x] TC_BV_03 Maximum boundary
+- [x] TC_BV_04 Above maximum boundary
+
+## What was tested
+- `index.html` - Login Page
+- `dashboard.html` - Dashboard Page
+- `script.js` - Validation Logic
+- `tests.js` - Tests Code
