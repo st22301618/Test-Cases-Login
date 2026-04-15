@@ -20,7 +20,7 @@ loginForm.addEventListener('submit', (e) => {
     // Clear previous error message
     errorMessage.textContent = "";
 
-    // CASE: Check Empty Fields
+    // 1. CASE: Check Empty Fields
     if (!email || !password) {
         errorMessage.textContent = "All fields are required.";
         return;
@@ -42,7 +42,7 @@ loginForm.addEventListener('submit', (e) => {
         window.location.href = "dashboard.html";
     }
 
-    // CASE: Invalid Login / SQL Injection
+    // 4. CASE: Invalid Login / SQL Injection
     else {
         showError("Invalid email or password.");
     }
