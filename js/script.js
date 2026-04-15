@@ -26,7 +26,17 @@ loginForm.addEventListener('submit', (e) => {
         return;
     }
 
-    // CASE: Valid Login
+    // 2. CASE: Password Length Validation
+    if (password.length < 8) {
+        showError("Password must be at least 8 characters.");
+        return;
+    }
+    if (password.length > 12) {
+        showError("Password cannot exceed 12 characters.");
+        return;
+    }
+
+    // 3. CASE: Valid Login
     if (email === VALID_USER.email && password === VALID_USER.password) {
         alert("Success! Redirecting...");
         window.location.href = "dashboard.html";
