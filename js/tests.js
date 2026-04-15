@@ -1,5 +1,8 @@
 /* Automated Testing */
 
+console.log("To Start Tests: runAllTests();");
+console.log("To test Valid Login, use: test@mail.com / pass12345");
+
 function runTestScenario(name, email, pass) {
     console.group(`Test: ${name}`);
     
